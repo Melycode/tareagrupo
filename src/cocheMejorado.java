@@ -79,9 +79,12 @@ public class cocheMejorado {
 
 
     public void conducir(double km){
-        this.kilometraje = this.kilometraje + km;
-        this.combustibleActual = this.combustibleActual - (km * this.consumo);
-
+        double kmValido = Math.max(0.0, km);
+        double kmPosibles = this.getAutonomia();
+        double kmARecorrer = Math.min(kmValido, kmPosibles);
+        double combustibleGastado = kmARecorrer * this.consumo;
+        this.kilometraje += kmARecorrer;
+        this.combustibleActual -= combustibleGastado;
     }
 
 
@@ -91,7 +94,7 @@ public class cocheMejorado {
 
 
     public double getAutonomia(){
-        return (this.combustibleActual * 100) / this.consumo;
+        return this.combustibleActual / this.consumo;
 }
 
     @Override
