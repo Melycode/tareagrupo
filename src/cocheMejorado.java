@@ -80,7 +80,7 @@ public class cocheMejorado {
 
     public void conducir(double km){
         this.kilometraje = this.kilometraje + km;
-        this.combustibleActual = this.combustibleActual - (km * this.consumo / 100);
+        this.combustibleActual = this.combustibleActual - (km * this.consumo);
 
     }
 
@@ -91,7 +91,7 @@ public class cocheMejorado {
 
 
     public double getAutonomia(){
-        return (this.combustibleActual / this.consumo) * 100;
+        return this.combustibleActual / this.consumo;
 }
 
     @Override
