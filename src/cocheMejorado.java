@@ -99,7 +99,7 @@ public class cocheMejorado {
 
     @Override
     public String toString() {
-        return this.marca + this.modelo;
+        return this.marca + " " + this.modelo;
     }
     
 }
