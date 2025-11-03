@@ -91,7 +91,7 @@ public class cocheMejorado {
 
 
     public double getAutonomia(){
-        return this.combustibleActual / this.consumo;
+        return (this.combustibleActual * 100) / this.consumo;
 }
 
     @Override
