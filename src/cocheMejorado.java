@@ -23,9 +23,6 @@ public class cocheMejorado {
         this.marca = marca;
         this.modelo = modelo;
         this.anyoFabricacion = anyoFabricacion;
-        this.combustibleActual = 0.0;
-        this.consumo = 0.0;
-        this.kilometraje = 0.0;
     }
 
 
@@ -79,12 +76,8 @@ public class cocheMejorado {
 
 
     public void conducir(double km){
-        double kmValido = Math.max(0.0, km);
-        double kmPosibles = this.getAutonomia();
-        double kmARecorrer = Math.min(kmValido, kmPosibles);
-        double combustibleGastado = kmARecorrer * this.consumo;
-        this.kilometraje += kmARecorrer;
-        this.combustibleActual -= combustibleGastado;
+        this.kilometraje += km;
+        this.combustibleActual -= this.consumo * km;
     }
 
 
@@ -102,4 +95,3 @@ public class cocheMejorado {
         return this.marca + " " + this.modelo;
     }
 }
-
